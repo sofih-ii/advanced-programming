@@ -1,11 +1,930 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     DECLARACIÓN DEL TIPO DE DOCUMENTO
+     DOCTYPE le dice al navegador que esto es HTML5 (la versión más actual)
+     ════════════════════════════════════════════════════════════════════════════════ -->
+
+<html lang="es">
+<!-- ELEMENTO RAÍZ: <html>
+     - Envuelve todo el contenido del documento
+     - lang="es" especifica que el idioma es español (importante para accesibilidad) -->
+<!-- Elemento raíz de la página en idioma español -->
+
 <head>
+    <!-- SECCIÓN HEAD (ENCABEZADO):
+         - Contiene información SOBRE la página (no se ve en pantalla)
+         - Incluye: metadatos, título, enlaces a estilos, etc. -->
+    
     <meta charset="UTF-8">
-    <title>HTML + CSS</title>
+    <!-- CODIFICACIÓN DE CARACTERES:
+         - UTF-8 permite usar acentos (á, é, í, ó, ú) y caracteres españoles (ñ)
+         - IMPORTANTE: Siempre debe ser UTF-8 en proyectos modernos -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- RESPONSIVIDAD (ADAPTACIÓN A MÓVILES):
+         - width=device-width: La página se adapta al ancho del dispositivo
+         - initial-scale=1.0: Zoom inicial al 100%
+         - Esencial para que se vea bien en móviles -->
+    
+    <title>Apuntes de Clase - HTML y CSS</title>
+    <!-- TÍTULO DE LA PÁGINA:
+         - Aparece en la pestaña del navegador
+         - Los motores de búsqueda lo leen primero
+         - Máximo 60 caracteres para mejor visualización -->
+    
     <link rel="stylesheet" href="style.css">
+    <!-- VINCULACIÓN DE HOJAS DE ESTILO (CSS):
+         - rel="stylesheet" indica que es un archivo de estilos
+         - href="style.css" es la ruta al archivo CSS
+         - Sin CSS, la página sería solo texto gris y aburrido -->
+
 </head>
+<!-- FIN DE LA SECCIÓN HEAD -->
+
 <body>
-    <a href="#contenido">Saltar contenido</a>
+    <!-- SECCIÓN BODY (CUERPO):
+         - Contiene todo lo VISIBLE en la página
+         - Solo lo que está aquí se ve en el navegador -->
+    
+    
+    <!-- ════════════════════════════════════════════════════════════════════════════════
+         SECCIÓN 1: ENCABEZADO (HEADER)
+         Es la parte superior de la página con título e información introductoria
+         ════════════════════════════════════════════════════════════════════════════════ -->
+    
+    <header class="site-header">
+        <!-- ELEMENTO HEADER:
+             - Define la sección de encabezado semántica
+             - class="site-header" es el nombre de la clase para los estilos CSS -->
+        
+        <div class="container">
+            <!-- DIV CONTENEDOR:
+                 - <div> es un contenedor genérico sin significado semántico
+                 - Se usa para agrupar elementos y aplicar estilos -->
+            
+            <h1 class="site-title">Apuntes de Clase: HTML y CSS</h1>
+            <!-- ENCABEZADO NIVEL 1:
+                 - <h1> es el título PRINCIPAL (mayor importancia)
+                 - Solo debe haber UN <h1> por página (buena práctica SEO)
+                 - Los buscadores Google, Bing, etc. lo consideran muy importante
+                 - Ayuda a usuarios y navegadores a entender el tema principal -->
+            
+            <h2 class="site-description">Fundamentos del Desarrollo Web</h2>
+            <!-- ENCABEZADO NIVEL 2:
+                 - <h2> es un subtítulo secundario
+                 - Menos importancia que <h1>
+                 - Puede haber múltiples <h2> en una página -->
+            
+            <h3 class="site-subtitle">Aprende a crear páginas web desde cero</h3>
+            <!-- ENCABEZADO NIVEL 3:
+                 - <h3> es un subtítulo terciario
+                 - La jerarquía es: h1 > h2 > h3 > h4 > h5 > h6 -->
+            
+            <p class="site-slogan">
+                En esta página encontrarás apuntes organizados con explicaciones detalladas
+                sobre cada elemento y cómo funcionan juntos HTML y CSS.
+            </p>
+            <!-- PÁRRAFO:
+                 - <p> contiene un bloque de texto
+                 - Los navegadores añaden espacios automáticamente antes y después -->
+        
+        </div>
+        <!-- FIN DIV CONTENEDOR -->
+    
+    </header>
+    <!-- FIN SECCIÓN HEADER -->
+    
+    
+    <!-- ════════════════════════════════════════════════════════════════════════════════
+         SECCIÓN 2: NAVEGACIÓN (NAV)
+         Menú para navegar por diferentes partes de la página
+         ════════════════════════════════════════════════════════════════════════════════ -->
+    
+    <nav class="site-nav">
+        <!-- ELEMENTO NAV:
+             - Define la sección de navegación
+             - Ayuda a usuarios y motores de búsqueda a entender la estructura
+             - Generalmente contiene menús de enlaces -->
+        
+        <ul class="nav-list">
+            <!-- UL = LISTA SIN ORDEN (Unordered List):
+                 - Los elementos se muestran con viñetas (•)
+                 - class="nav-list" permite estilar la lista con CSS -->
+            
+            <li><a href="#seccion-conceptos">Conceptos Básicos</a></li>
+            <!-- LI = ELEMENTO DE LISTA:
+                 - <a> es un ANCLA O ENLACE (hipervínculo)
+                 - href="#seccion-conceptos" apunta a otra parte de esta misma página
+                 - El # indica que es un enlace interno -->
+            
+            <li><a href="#seccion-etiquetas">Etiquetas HTML</a></li>
+            <!-- Otro elemento del menú -->
+            
+            <li><a href="#seccion-ejemplo">Ejemplo Completo</a></li>
+            <!-- Otro elemento del menú -->
+            
+            <li><a href="#seccion-css">Introducción a CSS</a></li>
+            <!-- Otro elemento del menú -->
+            
+            <li><a href="#seccion-avanzados">Elementos Avanzados</a></li>
+            <!-- Nuevo elemento del menú para la sección de elementos avanzados -->
+            
+            <li><a href="#subseccion-botones">Botones e Interactividad</a></li>
+            <!-- Enlace a la subsección de botones -->
+        </ul>
+        <!-- FIN UL -->
+    
+    </nav>
+    <!-- FIN SECCIÓN NAV -->
+    
+    
+    <!-- ════════════════════════════════════════════════════════════════════════════════
+         SECCIÓN 3: CONTENIDO PRINCIPAL (MAIN)
+         El contenido único y principal de la página
+         ════════════════════════════════════════════════════════════════════════════════ -->
+    
+    <main class="site-content" id="main-content">
+        <!-- ELEMENTO MAIN:
+             - Contiene el contenido principal y ÚNICO de la página
+             - Solo debe haber un <main> por página
+             - Excluye header, nav, footer, sidebars, etc.
+             - id="main-content" permite referencias a esta sección -->
+        
+        
+        <!-- ───────────────────────────────────────────────────────────────────────────
+             SUBSECCIÓN A: CONCEPTOS BÁSICOS
+             ─────────────────────────────────────────────────────────────────────────── -->
+        
+        <section class="conceptos" id="seccion-conceptos">
+            <!-- ELEMENT SECTION:
+                 - Agrupa contenido temáticamente relacionado
+                 - Esta sección trata sobre conceptos básicos
+                 - id="seccion-conceptos" permite enlazar a esta parte del menú -->
+            
+            <h2>Conceptos Básicos: HTML y CSS</h2>
+            <!-- Título de la sección -->
+            
+            <p>
+                HTML y CSS son dos tecnologías complementarias que forman la base del desarrollo web moderno:
+            </p>
+            
+            <ul class="concept-list">
+                <!-- Lista de conceptos -->
+                
+                <li>
+                    <strong>HTML</strong> = HyperText Markup Language
+                    <!-- <strong> destaca texto importante (generalmente en negrita) -->
+                    <br>
+                    <!-- <br> es un salto de línea -->
+                    Define la <em>ESTRUCTURA y el CONTENIDO</em> de la página
+                    <!-- <em> enfatiza con cursiva -->
+                </li>
+                
+                <li>
+                    <strong>CSS</strong> = Cascading Style Sheets
+                    <br>
+                    Define el <em>ESTILO, COLORES y POSICIONAMIENTO</em>
+                </li>
+            </ul>
+            
+            <p>
+                <strong>Analogía útil:</strong> Si HTML es el esqueleto de la página, 
+                CSS es la ropa y maquillaje que la hace hermosa.
+            </p>
+        
+        </section>
+        <!-- FIN SECCIÓN CONCEPTOS -->
+        
+        
+        <!-- ───────────────────────────────────────────────────────────────────────────
+             SUBSECCIÓN B: ETIQUETAS HTML IMPORTANTES
+             ─────────────────────────────────────────────────────────────────────────── -->
+        
+        <section class="etiquetas" id="seccion-etiquetas">
+            <!-- Nueva sección sobre etiquetas HTML -->
+            
+            <h2>Etiquetas HTML Más Importantes</h2>
+            
+            <!-- ARTÍCULO 1 -->
+            <article class="articulo">
+                <!-- ELEMENT ARTICLE:
+                     - Contiene contenido independiente y reutilizable
+                     - Perfecto para publicaciones de blog, artículos, etc. -->
+                
+                <h3>Etiquetas de Texto</h3>
+                
+                <p>Estas etiquetas estructuran el contenido de texto:</p>
+                
+                <dl>
+                    <!-- DL = DEFINITION LIST (Lista de Definiciones) -->
+                    
+                    <dt><code>&lt;h1&gt; a &lt;h6&gt;</code></dt>
+                    <!-- DT = DEFINITION TERM (término a definir) -->
+                    <!-- <code> muestra código con fuente monoespaciada -->
+                    
+                    <dd>Títulos y subtítulos (h1 es el más importante)</dd>
+                    <!-- DD = DEFINITION (definición del término) -->
+                    
+                    <dt><code>&lt;p&gt;</code></dt>
+                    <dd>Párrafos de texto normal</dd>
+                    
+                    <dt><code>&lt;strong&gt;</code></dt>
+                    <dd>Texto importante (se ve en negrita)</dd>
+                    
+                    <dt><code>&lt;em&gt;</code></dt>
+                    <dd>Texto enfatizado (se ve en cursiva)</dd>
+                    
+                    <dt><code>&lt;br&gt;</code></dt>
+                    <dd>Salto de línea (sin necesidad de párrafo nuevo)</dd>
+                </dl>
+            </article>
+            <!-- FIN ARTÍCULO 1 -->
+            
+            
+            <!-- ARTÍCULO 2 -->
+            <article class="articulo">
+                
+                <h3>Etiquetas de Enlaces e Imágenes</h3>
+                
+                <dl>
+                    
+                    <dt><code>&lt;a href="url"&gt;</code></dt>
+                    <dd>Crea un ENLACE o HIPERVÍNCULO a otra página</dd>
+                    
+                    <dt><code>&lt;img src="imagen.jpg"&gt;</code></dt>
+                    <dd>Inserta una imagen en la página</dd>
+                    
+                    <dt><code>&lt;nav&gt;</code></dt>
+                    <dd>Define la sección de navegación (menú)</dd>
+                </dl>
+            </article>
+            <!-- FIN ARTÍCULO 2 -->
+            
+            
+            <!-- ARTÍCULO 3 -->
+            <article class="articulo">
+                
+                <h3>Etiquetas de Listas</h3>
+                
+                <dl>
+                    
+                    <dt><code>&lt;ul&gt;</code></dt>
+                    <dd>Lista sin orden (con viñetas •)</dd>
+                    
+                    <dt><code>&lt;ol&gt;</code></dt>
+                    <dd>Lista ordenada (con números: 1, 2, 3...)</dd>
+                    
+                    <dt><code>&lt;li&gt;</code></dt>
+                    <dd>Elemento dentro de una lista</dd>
+                </dl>
+            </article>
+            <!-- FIN ARTÍCULO 3 -->
+        
+        </section>
+        <!-- FIN SECCIÓN ETIQUETAS -->
+        
+        
+        <!-- ───────────────────────────────────────────────────────────────────────────
+             SUBSECCIÓN C: EJEMPLO COMPLETO DE HTML
+             ─────────────────────────────────────────────────────────────────────────── -->
+        
+        <section class="ejemplo" id="seccion-ejemplo">
+            <!-- Sección con ejemplo de código completo -->
+            
+            <h2>Estructura Completa de una Página HTML</h2>
+            
+            <p>
+                Este es un ejemplo de una página HTML válida y bien estructurada.
+                Fíjate cómo cada etiqueta se abre y se cierra correctamente:
+            </p>
+            
+            <pre class="code-block">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Mi Primera Página Web&lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+        &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code>
+            </pre>
+            
+            <h3>Explicación Línea por Línea:</h3>
+            
+            <ol class="explanation-list">
+                <!-- OL = ORDERED LIST (lista numerada) -->
+                
+                <li>
+                    <strong><code>&lt;!DOCTYPE html&gt;</code></strong>
+                    <br>
+                    Declara que este es un documento HTML5. Debe ser la PRIMERA línea.
+                </li>
+                
+                <li>
+                    <strong><code>&lt;html lang="es"&gt;</code></strong>
+                    <br>
+                    Abre el documento HTML. lang="es" especifica idioma español.
+                </li>
+                
+                <li>
+                    <strong><code>&lt;head&gt;</code></strong>
+                    <br>
+                    Contiene información sobre la página (no visible en pantalla).
+                </li>
+                
+                <li>
+                    <strong><code>&lt;meta charset="UTF-8"&gt;</code></strong>
+                    <br>
+                    Define la codificación de caracteres (acentos, ñ, etc.).
+                </li>
+                
+                <li>
+                    <strong><code>&lt;title&gt;</code></strong>
+                    <br>
+                    El título que aparece en la pestaña del navegador.
+                </li>
+                
+                <li>
+                    <strong><code>&lt;body&gt;</code></strong>
+                    <br>
+                    Inicia el contenido visible de la página.
+                </li>
+                
+                <li>
+                    <strong><code>&lt;/body&gt;</code></strong>
+                    <br>
+                    Cierra el cuerpo. Todas las etiquetas abiertas deben cerrarse.
+                </li>
+                
+                <li>
+                    <strong><code>&lt;/html&gt;</code></strong>
+                    <br>
+                    Cierra el documento HTML. Debe ser la ÚLTIMA línea.
+                </li>
+            </ol>
+        
+        </section>
+        <!-- FIN SECCIÓN EJEMPLO -->
+        
+        
+        <!-- ───────────────────────────────────────────────────────────────────────────
+             SUBSECCIÓN D: INTRODUCCIÓN A CSS
+             ─────────────────────────────────────────────────────────────────────────── -->
+        
+        <section class="css-intro" id="seccion-css">
+            <!-- Sección sobre CSS -->
+            
+            <h2>¿Para Qué Sirve CSS?</h2>
+            
+            <p>
+                <strong>CSS</strong> (Cascading Style Sheets) es lo que hace que las páginas web 
+                se vean hermosas y profesionales.
+            </p>
+            
+            <h3>Cosas que puedes hacer con CSS:</h3>
+            
+            <ul class="css-features">
+                <li>✓ Cambiar colores de texto y fondos</li>
+                <li>✓ Ajustar tamaños de fuentes</li>
+                <li>✓ Crear espacios (márgenes y rellenos)</li>
+                <li>✓ Hacer diseños complejos (flexbox, grid)</li>
+                <li>✓ Crear animaciones y transiciones suaves</li>
+                <li>✓ Hacer que los sitios sean responsivos (móvil, tablet, desktop)</li>
+                <li>✓ Cambiar posiciones y tamaños de elementos</li>
+            </ul>
+            
+            <p>
+                <em>En próximas lecciones aprenderemos cómo escribir CSS efectivo y moderno.</em>
+            </p>
+        
+        </section>
+        <!-- FIN SECCIÓN CSS -->
+        
+        
+        <!-- ───────────────────────────────────────────────────────────────────────────
+             SUBSECCIÓN E: ELEMENTOS AVANZADOS DE HTML
+             ─────────────────────────────────────────────────────────────────────────── -->
+        
+        <section class="elementos-avanzados" id="seccion-avanzados">
+            <!-- Sección sobre elementos HTML más complejos y estructurados -->
+            
+            <h2>Elementos Avanzados de HTML</h2>
+            
+            <p>
+                Ahora veremos elementos HTML más estructurados y complejos que se usan
+                para organizar información de forma profesional y accesible.
+            </p>
+            
+            
+            <!-- ─────────────────────────────────────────────────────────────────────────
+                 SUBSECCIÓN E.1: LISTAS HTML
+                 ──────────────────────────────────────────────────────────────────────── -->
+            
+            <article class="articulo">
+                <h3>Listas HTML: Organizando Información</h3>
+                
+                <p>
+                    Las listas son formas de organizar información de manera ordenada y legible.
+                    HTML tiene dos tipos principales de listas:
+                </p>
+                
+                <h4>Listas Sin Orden (Desordenadas)</h4>
+                <!-- UL = Unordered List -->
+                <p>Se usan cuando el orden de los elementos NO importa. Los elementos aparecen con viñetas (•)</p>
+                
+                <h5>Ejemplo de lista sin orden:</h5>
+                <ul class="demo-list">
+                    <!-- LI = List Item (elemento individual de la lista) -->
+                    <li>item 1 - Primer elemento de la lista</li>
+                    <li>item 2 - Segundo elemento</li>
+                    <li>item 3 - Tercer elemento</li>
+                </ul>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;ul&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+  &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                
+                <hr>
+                <!-- <hr> es una línea horizontal para separar contenido -->
+                
+                <h4>Listas Ordenadas (Numeradas)</h4>
+                <!-- OL = Ordered List -->
+                <p>Se usan cuando el orden SÍ importa. Los elementos aparecen numerados (1, 2, 3...)</p>
+                
+                <h5>Ejemplo de lista ordenada:</h5>
+                <ol class="demo-list">
+                    <!-- Los elementos se numeran automáticamente -->
+                    <li>item 1 - Primer paso</li>
+                    <li>item 2 - Segundo paso</li>
+                    <li>item 3 - Tercer paso</li>
+                </ol>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;ol&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+  &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                
+                <p>
+                    <strong>Diferencia clave:</strong> Usa <code>&lt;ul&gt;</code> para listas de compras, 
+                    características, etc. Usa <code>&lt;ol&gt;</code> para pasos, rankings, instrucciones.
+                </p>
+            </article>
+            
+            <hr>
+            
+            <!-- ─────────────────────────────────────────────────────────────────────────
+                 SUBSECCIÓN E.2: MULTIMEDIA
+                 ──────────────────────────────────────────────────────────────────────── -->
+            
+            <article class="articulo">
+                <h3>Elementos Multimedia: Imágenes y Videos</h3>
+                
+                <p>
+                    HTML5 permite insertar imágenes y videos directamente en la página
+                    sin necesitar plugins externos. Esto mejora la experiencia del usuario.
+                </p>
+                
+                <h4>Imágenes (<code>&lt;img&gt;</code>)</h4>
+                
+                <p>
+                    La etiqueta <code>&lt;img&gt;</code> inserta una imagen en la página.
+                    <br>
+                    <strong>Atributos importantes:</strong>
+                </p>
+                
+                <ul class="attributes-list">
+                    <li><code>src</code> = ruta de la imagen (obligatorio)</li>
+                    <li><code>alt</code> = texto alternativo si la imagen no carga (obligatorio)</li>
+                    <li><code>width</code> y <code>height</code> = ancho y alto de la imagen</li>
+                    <li><code>loading="lazy"</code> = carga la imagen solo cuando se necesita (optimización)</li>
+                </ul>
+                
+                <h5>Ejemplo de imagen:</h5>
+                <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Chania" loading="lazy" width="300" height="200">
+                <!-- Nota: Esta imagen viene de un sitio externo de ejemplo -->
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;img src="imagen.jpg" alt="Descripción" width="300" height="200" loading="lazy"&gt;</code></pre>
+                
+                <hr>
+                
+                <h4>Videos (<code>&lt;video&gt;</code>)</h4>
+                
+                <p>
+                    La etiqueta <code>&lt;video&gt;</code> permite reproducir videos sin depender de YouTube.
+                    <br>
+                    <strong>Atributos importantes:</strong>
+                </p>
+                
+                <ul class="attributes-list">
+                    <li><code>width</code> y <code>height</code> = tamaño del reproductor</li>
+                    <li><code>controls</code> = añade botones de play, pausa, volumen</li>
+                    <li><code>autoplay</code> = inicia automáticamente (no recomendado)</li>
+                    <li><code>&lt;source&gt;</code> = especifica el archivo de video</li>
+                </ul>
+                
+                <h5>Ejemplo de video:</h5>
+                <video width="320" height="240" controls>
+                    <!-- SOURCE = especifica la ubicación y tipo de archivo -->
+                    <source src="movie.mp4" type="video/mp4">
+                    <!-- Mensaje para navegadores que no soportan video -->
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta video.
+&lt;/video&gt;</code></pre>
+            </article>
+            
+            <hr>
+            
+            <!-- ─────────────────────────────────────────────────────────────────────────
+                 SUBSECCIÓN E.3: TABLAS
+                 ──────────────────────────────────────────────────────────────────────── -->
+            
+            <article class="articulo">
+                <h3>Tablas: Organizando Datos en Filas y Columnas</h3>
+                
+                <p>
+                    Las tablas (<code>&lt;table&gt;</code>) se usan para mostrar datos organizados
+                    en filas (horizontales) y columnas (verticales).
+                </p>
+                
+                <p><strong>Estructura básica de una tabla:</strong></p>
+                
+                <ul class="attributes-list">
+                    <li><code>&lt;table&gt;</code> = contenedor de la tabla completa</li>
+                    <li><code>&lt;tr&gt;</code> = table row (una fila)</li>
+                    <li><code>&lt;th&gt;</code> = table header (encabezado de columna, en negrita)</li>
+                    <li><code>&lt;td&gt;</code> = table data (una celda de datos)</li>
+                    <li><code>&lt;thead&gt;</code> = agrupa los encabezados</li>
+                    <li><code>&lt;tbody&gt;</code> = agrupa el contenido de la tabla</li>
+                </ul>
+                
+                <h5>Ejemplo de tabla simple:</h5>
+                
+                <table class="demo-table" border="1">
+                    <!-- BORDER añade bordes para visualizar mejor la tabla -->
+                    <thead>
+                        <!-- THEAD: encabezados de la tabla -->
+                        <tr>
+                            <!-- TR: fila -->
+                            <th>Nombre</th>
+                            <!-- TH: celda de encabezado -->
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TBODY: contenido de la tabla -->
+                        <tr>
+                            <td>Ana</td>
+                            <!-- TD: celda de datos normal -->
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Carlos</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                
+                <p>
+                    <strong>Nota:</strong> Aunque puedes crear diseños con tablas, 
+                    hoy en día se recomienda usar CSS (flexbox, grid) para layouts.
+                    Las tablas deben usarse SOLO para datos tabulares.
+                </p>
+            </article>
+            
+            <hr>
+            
+            <!-- ─────────────────────────────────────────────────────────────────────────
+                 SUBSECCIÓN E.4: FORMULARIOS
+                 ──────────────────────────────────────────────────────────────────────── -->
+            
+            <article class="articulo">
+                <h3>Formularios: Recolectando Información de Usuarios</h3>
+                
+                <p>
+                    Los formularios (<code>&lt;form&gt;</code>) permiten que los usuarios
+                    envíen información al servidor. Son fundamentales para:
+                </p>
+                
+                <ul class="form-uses">
+                    <li>Contacto (nombre, email, mensaje)</li>
+                    <li>Logins (usuario y contraseña)</li>
+                    <li>Búsquedas</li>
+                    <li>Registros o inscripciones</li>
+                </ul>
+                
+                <p><strong>Elementos principales de formularios:</strong></p>
+                
+                <ul class="attributes-list">
+                    <li><code>&lt;form&gt;</code> = contenedor del formulario</li>
+                    <li><code>&lt;label&gt;</code> = etiqueta descriptiva (importante para accesibilidad)</li>
+                    <li><code>&lt;input&gt;</code> = campo de entrada (texto, email, contraseña, etc.)</li>
+                    <li><code>&lt;textarea&gt;</code> = área grande de texto</li>
+                    <li><code>&lt;select&gt;</code> = lista desplegable</li>
+                    <li><code>&lt;button&gt;</code> o <code>&lt;input type="submit"&gt;</code> = botón de envío</li>
+                </ul>
+                
+                <h5>Ejemplo de formulario de contacto:</h5>
+                
+                <form class="demo-form" action="/submit" method="post">
+                    <!-- ACTION: URL donde se enviarán los datos -->
+                    <!-- METHOD: POST (datos privados) o GET (datos visibles en URL) -->
+                    
+                    <label for="name">Nombre:</label>
+                    <!-- FOR = conecta la etiqueta con el input (usa el ID del input) -->
+                    <br>
+                    
+                    <input type="text" id="name" name="name" placeholder="Tu nombre completo">
+                    <!-- TYPE="text" = campo de texto normal -->
+                    <!-- NAME = clave que se envía al servidor -->
+                    <!-- PLACEHOLDER = texto de ejemplo gris -->
+                    <br>
+                    
+                    <label for="email">Email:</label>
+                    <br>
+                    
+                    <input type="email" id="email" name="email" placeholder="tu@email.com">
+                    <!-- TYPE="email" = valida automáticamente que sea un email válido -->
+                    <br>
+                    <br>
+                    
+                    <input type="submit" value="Enviar">
+                    <!-- TYPE="submit" = crea el botón que envía el formulario -->
+                    <!-- VALUE = texto que aparece en el botón -->
+                </form>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+  
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                
+                <h4>Tipos de Input Más Comunes:</h4>
+                
+                <dl class="input-types">
+                    <dt><code>type="text"</code></dt>
+                    <dd>Campo de texto normal (una línea)</dd>
+                    
+                    <dt><code>type="email"</code></dt>
+                    <dd>Campo que valida email (muestra teclado de email en móviles)</dd>
+                    
+                    <dt><code>type="password"</code></dt>
+                    <dd>Campo que oculta lo que escribes con puntos</dd>
+                    
+                    <dt><code>type="number"</code></dt>
+                    <dd>Campo solo para números (con botones +/-)</dd>
+                    
+                    <dt><code>type="checkbox"</code></dt>
+                    <dd>Casilla que se puede marcar (sí/no)</dd>
+                    
+                    <dt><code>type="radio"</code></dt>
+                    <dd>Botón de opción (solo puedes elegir una opción)</dd>
+                    
+                    <dt><code>type="submit"</code></dt>
+                    <dd>Botón para enviar el formulario</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <!-- ─────────────────────────────────────────────────────────────────────────
+                 SUBSECCIÓN E.5: BOTONES E INTERACTIVIDAD
+                 ──────────────────────────────────────────────────────────────────────── -->
+            
+            <article class="articulo" id="subseccion-botones">
+                <h3>Botones: Elementos Interactivos</h3>
+                
+                <p>
+                    Los botones (<code>&lt;button&gt;</code>) son elementos interactivos que permiten
+                    a los usuarios realizar acciones como enviar formularios, activar funciones,
+                    o navegar a otras páginas.
+                </p>
+                
+                <p><strong>¿Para qué se usan los botones?</strong></p>
+                
+                <ul class="button-uses">
+                    <li>Enviar formularios</li>
+                    <li>Activar funciones JavaScript</li>
+                    <li>Mostrar alertas o mensajes</li>
+                    <li>Iniciar descargas</li>
+                    <li>Navegar a otras páginas</li>
+                    <li>Cambiar el contenido de la página dinámicamente</li>
+                </ul>
+                
+                <h4>Tipos de Botones HTML</h4>
+                
+                <dl class="button-types">
+                    <dt><code>type="button"</code></dt>
+                    <dd>Botón genérico que NO envía formulario. Se usa para acciones personalizadas</dd>
+                    
+                    <dt><code>type="submit"</code></dt>
+                    <dd>Botón que envía el formulario al servidor</dd>
+                    
+                    <dt><code>type="reset"</code></dt>
+                    <dd>Botón que limpia todos los datos del formulario</dd>
+                </dl>
+                
+                <h4>Ejemplo 1: Botón Simple con Alerta</h4>
+                
+                <p>Este botón ejecuta una función JavaScript que muestra un mensaje:</p>
+                
+                <button type="button" onclick="alert('¡Hola! Acabas de hacer clic en el botón')">
+                    Haz clic aquí
+                </button>
+                <!-- TYPE="button" = botón normal (no envía formulario) -->
+                <!-- ONCLICK = evento que se ejecuta cuando haces clic -->
+                <!-- alert() = función JavaScript que muestra una ventana emergente -->
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;button type="button" onclick="alert('¡Hola!')"&gt;
+  Haz clic aquí
+&lt;/button&gt;</code></pre>
+                
+                <hr>
+                
+                <h4>Ejemplo 2: Botón para Enviar Formulario</h4>
+                
+                <p>Los botones dentro de un <code>&lt;form&gt;</code> pueden enviar datos:</p>
+                
+                <form class="demo-form">
+                    <!-- Este formulario es solo para demostración -->
+                    
+                    <label for="demo-email">Ingresa tu email:</label>
+                    <br>
+                    
+                    <input type="email" id="demo-email" name="email" placeholder="tu@email.com">
+                    <br>
+                    <br>
+                    
+                    <button type="submit">Enviar Datos</button>
+                    <!-- TYPE="submit" = envía automáticamente el formulario -->
+                </form>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+  
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                
+                <hr>
+                
+                <h4>Ejemplo 3: Botón Reset para Limpiar Formulario</h4>
+                
+                <p>El tipo <code>reset</code> borra todos los datos ingresados:</p>
+                
+                <form class="demo-form">
+                    
+                    <label for="demo-name">Nombre:</label>
+                    <br>
+                    
+                    <input type="text" id="demo-name" name="name" placeholder="Tu nombre">
+                    <br>
+                    <br>
+                    
+                    <button type="reset">Limpiar Formulario</button>
+                    <!-- TYPE="reset" = limpia todos los campos del formulario -->
+                    
+                </form>
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;button type="reset"&gt;Limpiar Formulario&lt;/button&gt;</code></pre>
+                
+                <hr>
+                
+                <h4>Atributos Importantes de Botones</h4>
+                
+                <dl class="button-attributes">
+                    <dt><code>type</code></dt>
+                    <dd>Define el tipo de botón (button, submit, reset)</dd>
+                    
+                    <dt><code>onclick</code></dt>
+                    <dd>Ejecuta código JavaScript cuando se hace clic</dd>
+                    
+                    <dt><code>disabled</code></dt>
+                    <dd>Desactiva el botón (aparece gris y no se puede hacer clic)</dd>
+                    
+                    <dt><code>name</code></dt>
+                    <dd>Nombre para identificar el botón en un formulario</dd>
+                    
+                    <dt><code>value</code></dt>
+                    <dd>Valor que se envía cuando se hace clic (en formularios)</dd>
+                    
+                    <dt><code>class</code></dt>
+                    <dd>Clase CSS para aplicar estilos personalizados</dd>
+                </dl>
+                
+                <h4>Ejemplo 4: Botón Desactivado</h4>
+                
+                <p>El atributo <code>disabled</code> desactiva un botón:</p>
+                
+                <button type="button" onclick="alert('Esto funciona')">
+                    Botón Activo
+                </button>
+                
+                <button type="button" disabled>
+                    Botón Desactivado (no funciona)
+                </button>
+                <!-- DISABLED = desactiva el botón, aparece gris -->
+                
+                <p><strong>Código HTML:</strong></p>
+                <pre><code>&lt;button type="button" disabled&gt;
+  Botón Desactivado
+&lt;/button&gt;</code></pre>
+                
+                <h4>Diferencia: &lt;button&gt; vs &lt;input type="button"&gt;</h4>
+                
+                <p>Aunque ambos crean botones, <code>&lt;button&gt;</code> es más moderno y flexible:</p>
+                
+                <dl class="comparison">
+                    <dt><code>&lt;button&gt;</code></dt>
+                    <dd>Más flexible, puede contener HTML (iconos, emojis, etc.)</dd>
+                    
+                    <dt><code>&lt;input type="button"&gt;</code></dt>
+                    <dd>Más básico, solo texto plano. Usado en formularios clásicos</dd>
+                </dl>
+                
+                <p><strong>Ejemplos:</strong></p>
+                
+                <button type="button">
+                    <!-- Button puede tener múltiples elementos adentro -->
+                    ✓ Botón con Emoji
+                </button>
+                
+                <input type="button" value="Botón Input">
+                <!-- Input solo puede tener texto -->
+                
+            </article>
+        
+        </section>
+        <!-- FIN SECCIÓN ELEMENTOS AVANZADOS -->
+    
+    
+    <!-- ════════════════════════════════════════════════════════════════════════════════
+         SECCIÓN 4: PIE DE PÁGINA (FOOTER)
+         Información de contacto, derechos de autor e información adicional
+         ════════════════════════════════════════════════════════════════════════════════ -->
+    
+    <footer class="site-footer">
+        <!-- ELEMENT FOOTER:
+             - Define la sección de pie de página
+             - Usualmente contiene info de contacto, derechos, links, etc. -->
+        
+        <p>
+            &copy; 2024 Mis Apuntes de Clase 
+            <!-- &copy; es el símbolo de copyright © -->
+        </p>
+        
+        <p>
+            Hecho con <strong>HTML5</strong> y <strong>CSS3</strong>
+        </p>
+    
+    </footer>
+    <!-- FIN FOOTER -->
+
 </body>
+<!-- FIN DEL BODY -->
+
 </html>
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     FIN DEL DOCUMENTO HTML
+     Espero que este archivo te haya ayudado a entender cómo funciona HTML.
+     Recuerda: HTML es la ESTRUCTURA, CSS es el ESTILO.
+     ════════════════════════════════════════════════════════════════════════════════ -->
+
