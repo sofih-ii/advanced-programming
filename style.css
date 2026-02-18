@@ -1,0 +1,662 @@
+/* ===========================================
+   VARIABLES CSS (CSS VARIABLES)
+   ===========================================
+   Las variables CSS permiten definir valores reutilizables.
+   Se definen en :root (el elemento raíz del documento) para que estén disponibles globalmente.
+   Usamos -- para nombrarlas, y var() para usarlas.
+   Esto facilita cambiar colores o tamaños en toda la página desde un solo lugar.
+*/
+:root {
+    --primary-color: #3498db;      /* Color principal: Azul para encabezados y botones */
+    --secondary-color: #2ecc71;    /* Color secundario: Verde para navegación y acentos */
+    --background-color: #f5f5f5;   /* Color de fondo: Gris claro para el cuerpo */
+    --text-color: #333333;         /* Color de texto: Gris oscuro para buena legibilidad */
+    --border: rgba(0, 0, 0, 0.1); /* Color de borde: Negro transparente para sutiles separaciones */
+    --radius: 5px;                 /* Radio de borde: Para esquinas redondeadas */
+    --bg: var(--background-color); /* Alias para el fondo */
+    --text: var(--text-color);     /* Alias para el texto */
+}
+
+/* ===========================================
+   RESETEO GLOBAL Y BOX-SIZING
+   ===========================================
+   El selector universal * afecta a TODOS los elementos.
+   box-sizing: border-box hace que padding y border se incluyan en el ancho/alto total,
+   evitando problemas de cálculo de tamaños.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   ESTILOS PARA HTML Y BODY
+   ===========================================
+   html y body son los elementos raíz.
+   height: 100% hace que ocupen toda la altura de la ventana.
+   Esto es útil para layouts de página completa.
+*/
+html, body {
+    height: 100%;
+}
+
+/* ===========================================
+   ESTILOS PARA EL CUERPO (BODY)
+   ===========================================
+   margin: 0 elimina el margen predeterminado del navegador.
+   font-family establece la fuente, usando fuentes del sistema para mejor rendimiento.
+   background usa gradientes radiales para un fondo atractivo, más el color de fondo.
+   color establece el color de texto predeterminado.
+   line-height: 1.5 mejora la legibilidad del texto.
+*/
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 20% 10%, rgba(124,77,255,.25), transparent),
+                radial-gradient(900px 500px at 90% 0%, rgba(0,200,255,.18), transparent),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ===========================================
+   CONTENEDOR PRINCIPAL
+   ===========================================
+   .container limita el ancho máximo y centra el contenido.
+   width: min(1050px, 92%) significa: máximo 1050px, pero al menos 92% del ancho de la pantalla.
+   margin: 0 auto centra horizontalmente.
+   Esto crea un layout responsivo.
+*/
+.container {
+    width: min(1050px, 92%);
+    margin: 0 auto;
+}
+
+/* ===========================================
+   ENLACE DE ACCESIBILIDAD (SKIP LINK)
+   ===========================================
+   .skip-link es para usuarios con lectores de pantalla.
+   position: absolute lo posiciona fuera de la pantalla normalmente.
+   :focus lo muestra cuando se enfoca (con tab).
+   background y color lo hacen visible.
+*/
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 10px;
+    background: white;
+    color: black;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+/* ===========================================
+   ESTILOS PARA ENLACES
+   ===========================================
+   a { color: inherit; } hace que los enlaces hereden el color del padre,
+   en lugar del azul predeterminado del navegador.
+*/
+a {
+    color: inherit;
+}
+
+/* ===========================================
+   ESTILOS PARA CÓDIGO INLINE
+   ===========================================
+   code resalta bloques de código inline.
+   background agrega un fondo sutil.
+   padding añade espacio interno.
+   border-radius redondea las esquinas.
+*/
+code {
+    background: rgba(255,255,255,.08);
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+/* ===========================================
+   ESTILOS PARA EL HEADER (ENCABEZADO)
+   ===========================================
+   .site-header da estilo al encabezado principal.
+   background usa el color primario.
+   color blanco para contraste.
+   padding añade espacio vertical.
+   text-align: center centra el texto.
+*/
+.site-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* ===========================================
+   ESTILOS PARA EL TÍTULO DEL SITIO
+   ===========================================
+   .site-title es el h1 principal.
+   font-size lo hace grande.
+   margin controla el espaciado.
+*/
+.site-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA LA DESCRIPCIÓN DEL SITIO
+   ===========================================
+   .site-description es el h2.
+   font-size mediano.
+   margin para espaciado.
+*/
+.site-description {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA EL SUBTÍTULO
+   ===========================================
+   .site-subtitle es el h3.
+   font-size más pequeño.
+   margin para separación.
+*/
+.site-subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA EL SLOGAN
+   ===========================================
+   .site-slogan es el párrafo del slogan.
+   font-style: italic lo hace cursiva.
+   margin: 0 elimina márgenes.
+*/
+.site-slogan {
+    font-style: italic;
+    margin: 0;
+}
+
+/* ===========================================
+   ESTILOS PARA LA NAVEGACIÓN
+   ===========================================
+   .site-nav da estilo al menú de navegación.
+   background usa el color secundario.
+   padding añade espacio.
+*/
+.site-nav {
+    background: var(--secondary-color);
+    padding: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA LA LISTA DE NAVEGACIÓN
+   ===========================================
+   .nav-list es la ul del menú.
+   list-style: none elimina los puntos de la lista.
+   padding y margin: 0 eliminan espaciados predeterminados.
+   display: flex hace que los elementos estén en fila.
+   justify-content: center los centra horizontalmente.
+   gap añade espacio entre elementos.
+*/
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LOS ENLACES DEL MENÚ
+   ===========================================
+   .nav-list li a estila los enlaces del menú.
+   color blanco.
+   text-decoration: none elimina el subrayado.
+   padding añade espacio interno.
+   border-radius redondea esquinas.
+   transition anima el cambio de fondo al pasar el mouse.
+*/
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background 0.3s;
+}
+
+/* ===========================================
+   EFECTO HOVER PARA ENLACES DEL MENÚ
+   ===========================================
+   :hover cambia el fondo cuando el mouse pasa sobre el enlace.
+   background semi-transparente para un efecto sutil.
+*/
+.nav-list li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===========================================
+   ESTILOS PARA EL CONTENIDO PRINCIPAL
+   ===========================================
+   .site-content es el main.
+   padding añade espacio vertical.
+*/
+.site-content {
+    padding: 2rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA SECCIONES
+   ===========================================
+   section afecta a todas las secciones.
+   margin-bottom añade espacio entre secciones.
+*/
+section {
+    margin-bottom: 3rem;
+}
+
+/* ===========================================
+   ESTILOS PARA ENCABEZADOS H2 EN SECCIONES
+   ===========================================
+   section h2 estila los títulos de sección.
+   color usa el primario.
+   border-bottom añade una línea inferior.
+   padding-bottom separa el texto de la línea.
+   margin-bottom añade espacio debajo.
+*/
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===========================================
+   ESTILOS PARA H3 EN SECCIONES
+   ===========================================
+   section h3 para subtítulos.
+   color del texto.
+   margin-top añade espacio arriba.
+*/
+section h3 {
+    color: var(--text-color);
+    margin-top: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA H4 EN SECCIONES
+   ===========================================
+   section h4 para sub-subtítulos.
+   color primario.
+   margin-top espacio.
+*/
+section h4 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+}
+
+/* ===========================================
+   ESTILOS PARA H5 EN SECCIONES
+   ===========================================
+   section h5 para títulos pequeños.
+   color secundario.
+   margin-top espacio.
+*/
+section h5 {
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+/* ===========================================
+   ESTILOS PARA BLOQUES DE CÓDIGO
+   ===========================================
+   .code-block para pre con código.
+   background sutil.
+   padding espacio interno.
+   border-radius esquinas redondeadas.
+   overflow-x: auto permite scroll horizontal si es necesario.
+   margin espacio vertical.
+*/
+.code-block {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA PRE (ELEMENTOS PRE)
+   ===========================================
+   pre mantiene el formato del texto.
+   margin añade espacio.
+*/
+pre {
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   FUENTE PARA CODE DENTRO DE PRE
+   ===========================================
+   code dentro de pre usa fuente monoespaciada.
+*/
+code {
+    font-family: 'Courier New', monospace;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE EXPLICACIÓN
+   ===========================================
+   .explanation-list para ol de explicaciones.
+   margin y padding-left para indentación.
+*/
+.explanation-list {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESPACIADO PARA ELEMENTOS DE LISTA
+   ===========================================
+   .explanation-list li añade margen inferior.
+*/
+.explanation-list li {
+    margin-bottom: 1rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE DEMO
+   ===========================================
+   Similar a explanation-list.
+*/
+.demo-list {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE ATRIBUTOS
+   ===========================================
+   Similar.
+*/
+.attributes-list {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE CARACTERÍSTICAS CSS
+   ===========================================
+   Similar.
+*/
+.css-features {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE USOS DE FORMULARIOS
+   ===========================================
+   Similar.
+*/
+.form-uses {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE USOS DE BOTONES
+   ===========================================
+   Similar.
+*/
+.button-uses {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* ===========================================
+   ESTILOS PARA LISTAS DE DEFINICIÓN
+   ===========================================
+   .input-types, etc. para dl.
+   margin añade espacio.
+*/
+.input-types, .button-types, .button-attributes, .comparison {
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA TÉRMINOS EN DL
+   ===========================================
+   dt en negrita y color primario.
+*/
+.input-types dt, .button-types dt, .button-attributes dt, .comparison dt {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ===========================================
+   ESTILOS PARA DEFINICIONES EN DL
+   ===========================================
+   dd con margen izquierdo y inferior.
+*/
+.input-types dd, .button-types dd, .button-attributes dd, .comparison dd {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===========================================
+   ESTILOS PARA TABLAS DE DEMO
+   ===========================================
+   .demo-table para table.
+   width: 100% ocupa todo el ancho.
+   border-collapse combina bordes.
+   margin espacio.
+*/
+.demo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA CELDAS DE TABLA
+   ===========================================
+   th y td con borde, padding y alineación.
+*/
+.demo-table th, .demo-table td {
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* ===========================================
+   ESTILOS PARA ENCABEZADOS DE TABLA
+   ===========================================
+   th con fondo primario y texto blanco.
+*/
+.demo-table th {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===========================================
+   ESTILOS PARA FORMULARIOS DE DEMO
+   ===========================================
+   .demo-form para form.
+   background sutil.
+   padding espacio.
+   border-radius esquinas.
+   margin espacio.
+*/
+.demo-form {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA ETIQUETAS EN FORMULARIOS
+   ===========================================
+   label en bloque, margen inferior, negrita.
+*/
+.demo-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* ===========================================
+   ESTILOS PARA INPUTS EN FORMULARIOS
+   ===========================================
+   input ancho completo, padding, borde, radio, margen.
+*/
+.demo-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+/* ===========================================
+   ESTILOS PARA BOTONES EN FORMULARIOS
+   ===========================================
+   button con fondo primario, texto blanco, sin borde, padding, radio, cursor, transición.
+*/
+.demo-form button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* ===========================================
+   HOVER PARA BOTONES EN FORMULARIOS
+   ===========================================
+   Cambia a color secundario.
+*/
+.demo-form button:hover {
+    background: var(--secondary-color);
+}
+
+/* ===========================================
+   ESTILOS GENERALES PARA BOTONES
+   ===========================================
+   button general con estilos similares.
+*/
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transition: background 0.3s;
+}
+
+/* ===========================================
+   HOVER PARA BOTONES GENERALES
+   ===========================================
+   Similar.
+*/
+button:hover {
+    background: var(--secondary-color);
+}
+
+/* ===========================================
+   ESTILOS PARA BOTONES DESACTIVADOS
+   ===========================================
+   :disabled cambia apariencia y cursor.
+*/
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ===========================================
+   ESTILOS PARA IMÁGENES Y VIDEOS
+   ===========================================
+   img, video responsivos, radio, margen.
+*/
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin: 1rem 0;
+}
+
+/* ===========================================
+   ESTILOS PARA ARTÍCULOS
+   ===========================================
+   .articulo para article.
+   margen inferior, padding, fondo semi-transparente, radio, sombra.
+*/
+.articulo {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px var(--border);
+}
+
+/* ===========================================
+   ESTILOS PARA EL FOOTER
+   ===========================================
+   .site-footer para footer.
+   fondo oscuro, texto blanco, centrado, padding, margen superior.
+*/
+.site-footer {
+    background: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+/* ===========================================
+   ESTILOS PARA PÁRRAFOS EN FOOTER
+   ===========================================
+   p con margen.
+*/
+.site-footer p {
+    margin: 0.5rem 0;
+}
+
+/* ===========================================
+   DISEÑO RESPONSIVO
+   ===========================================
+   @media (max-width: 768px) aplica estilos solo en pantallas pequeñas.
+   Cambia navegación a columna, reduce tamaños de fuente, ajusta contenedor.
+*/
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .site-description {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+
+
+
