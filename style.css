@@ -1,20 +1,24 @@
 /* ===========================================
-   VARIABLES CSS (CSS VARIABLES)
+   VARIABLES CSS (CSS VARIABLES) - TEMA FUTURISTA
    ===========================================
-   Las variables CSS permiten definir valores reutilizables.
-   Se definen en :root (el elemento raíz del documento) para que estén disponibles globalmente.
-   Usamos -- para nombrarlas, y var() para usarlas.
-   Esto facilita cambiar colores o tamaños en toda la página desde un solo lugar.
+   Tema oscuro futurista inspirado en interfaces de programación.
+   Colores neón y efectos de glow para un look cyberpunk moderno.
 */
 :root {
-    --primary-color: #3498db;      /* Color principal: Azul para encabezados y botones */
-    --secondary-color: #2ecc71;    /* Color secundario: Verde para navegación y acentos */
-    --background-color: #f5f5f5;   /* Color de fondo: Gris claro para el cuerpo */
-    --text-color: #333333;         /* Color de texto: Gris oscuro para buena legibilidad */
-    --border: rgba(0, 0, 0, 0.1); /* Color de borde: Negro transparente para sutiles separaciones */
-    --radius: 5px;                 /* Radio de borde: Para esquinas redondeadas */
-    --bg: var(--background-color); /* Alias para el fondo */
-    --text: var(--text-color);     /* Alias para el texto */
+    --primary-color: #00d4ff;       /* Cian neón - color principal */
+    --secondary-color: #00ff88;     /* Verde neón - acentos */
+    --accent-color: #ff0080;        /* Rosa neón - highlights */
+    --background-color: #0a0a0a;    /* Negro casi puro */
+    --surface-color: #1a1a1a;       /* Gris oscuro para superficies */
+    --card-bg: rgba(26, 26, 26, 0.8); /* Fondo de tarjetas con transparencia */
+    --text-color: #ffffff;          /* Blanco puro para texto */
+    --text-muted: #a1a1aa;          /* Gris claro para texto secundario */
+    --border: rgba(0, 212, 255, 0.2); /* Borde con glow sutil */
+    --shadow: 0 8px 32px rgba(0, 212, 255, 0.1), 0 4px 16px rgba(0, 255, 136, 0.1); /* Sombra futurista con glow */
+    --glow: 0 0 20px rgba(0, 212, 255, 0.3); /* Efecto glow */
+    --radius: 12px;                /* Bordes más redondeados para look moderno */
+    --bg: var(--background-color);
+    --text: var(--text-color);
 }
 
 /* ===========================================
@@ -42,20 +46,18 @@ html, body {
 /* ===========================================
    ESTILOS PARA EL CUERPO (BODY)
    ===========================================
-   margin: 0 elimina el margen predeterminado del navegador.
-   font-family establece la fuente, usando fuentes del sistema para mejor rendimiento.
-   background usa gradientes radiales para un fondo atractivo, más el color de fondo.
-   color establece el color de texto predeterminado.
-   line-height: 1.5 mejora la legibilidad del texto.
+   Fondo oscuro futurista con gradiente sutil.
+   Texto blanco para alto contraste.
+   Line-height mejorado para legibilidad.
+   Fuente monoespaciada para look de código.
 */
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: radial-gradient(1200px 600px at 20% 10%, rgba(124,77,255,.25), transparent),
-                radial-gradient(900px 500px at 90% 0%, rgba(0,200,255,.18), transparent),
-                var(--bg);
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, var(--background-color) 0%, #0f0f0f 50%, #0a0a0a 100%);
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.7;
+    min-height: 100vh;
 }
 
 /* ===========================================
@@ -106,31 +108,35 @@ a {
 /* ===========================================
    ESTILOS PARA CÓDIGO INLINE
    ===========================================
-   code resalta bloques de código inline.
-   background agrega un fondo sutil.
-   padding añade espacio interno.
-   border-radius redondea las esquinas.
+   Código inline futurista con fondo oscuro sutil.
+   Padding, border-radius, color neón.
+   Border con glow sutil.
 */
 code {
-    background: rgba(255,255,255,.08);
-    padding: 2px 6px;
-    border-radius: 8px;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-weight: 500;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
 }
 
 /* ===========================================
    ESTILOS PARA EL HEADER (ENCABEZADO)
    ===========================================
-   .site-header da estilo al encabezado principal.
-   background usa el color primario.
-   color blanco para contraste.
-   padding añade espacio vertical.
-   text-align: center centra el texto.
+   Header futurista con gradiente oscuro y glow.
+   Color blanco para texto.
+   Padding generoso.
+   Box-shadow con glow neón.
 */
 .site-header {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--surface-color) 0%, #0f0f0f 100%);
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
+    box-shadow: var(--glow);
+    border-bottom: 1px solid var(--border);
 }
 
 /* ===========================================
@@ -184,13 +190,15 @@ code {
 /* ===========================================
    ESTILOS PARA LA NAVEGACIÓN
    ===========================================
-   .site-nav da estilo al menú de navegación.
-   background usa el color secundario.
-   padding añade espacio.
+   Navegación futurista con fondo oscuro y glow.
+   Padding generoso.
+   Box-shadow con glow neón.
 */
 .site-nav {
-    background: var(--secondary-color);
-    padding: 1rem 0;
+    background: linear-gradient(135deg, var(--surface-color) 0%, #0f0f0f 100%);
+    padding: 1.5rem 0;
+    box-shadow: var(--glow);
+    border-bottom: 1px solid var(--border);
 }
 
 /* ===========================================
@@ -215,29 +223,34 @@ code {
 /* ===========================================
    ESTILOS PARA LOS ENLACES DEL MENÚ
    ===========================================
-   .nav-list li a estila los enlaces del menú.
-   color blanco.
-   text-decoration: none elimina el subrayado.
-   padding añade espacio interno.
-   border-radius redondea esquinas.
-   transition anima el cambio de fondo al pasar el mouse.
+   Enlaces futuristas con color neón.
+   Padding generoso.
+   Border-radius.
+   Transition suave.
+   Font-weight para énfasis.
 */
 .nav-list li a {
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    border: 1px solid transparent;
 }
 
 /* ===========================================
    EFECTO HOVER PARA ENLACES DEL MENÚ
    ===========================================
-   :hover cambia el fondo cuando el mouse pasa sobre el enlace.
-   background semi-transparente para un efecto sutil.
+   Hover con glow neón y transformación.
+   Box-shadow con glow.
 */
 .nav-list li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    border-color: var(--primary-color);
 }
 
 /* ===========================================
@@ -315,19 +328,21 @@ section h5 {
 /* ===========================================
    ESTILOS PARA BLOQUES DE CÓDIGO
    ===========================================
-   .code-block para pre con código.
-   background sutil.
-   padding espacio interno.
-   border-radius esquinas redondeadas.
-   overflow-x: auto permite scroll horizontal si es necesario.
-   margin espacio vertical.
+   Bloques de código futuristas con fondo oscuro.
+   Padding amplio, border-radius, overflow-x.
+   Box-shadow con glow, border izquierdo neón.
+   Backdrop-filter para efecto vidrio.
 */
 .code-block {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 1rem;
+    background: var(--surface-color);
+    padding: 1.5rem;
     border-radius: var(--radius);
     overflow-x: auto;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    box-shadow: var(--glow);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-color);
+    backdrop-filter: blur(10px);
 }
 
 /* ===========================================
@@ -481,23 +496,26 @@ code {
 */
 .demo-table th {
     background: var(--primary-color);
-    color: white;
+    color: #777777;
 }
 
 /* ===========================================
    ESTILOS PARA FORMULARIOS DE DEMO
    ===========================================
    .demo-form para form.
-   background sutil.
-   padding espacio.
-   border-radius esquinas.
-   margin espacio.
+   background blanco puro con borde sutil.
+   padding amplio.
+   border-radius grande.
+   margin generoso.
+   box-shadow moderna.
 */
 .demo-form {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 1rem;
+    background:#777777;
+    padding: 2rem;
     border-radius: var(--radius);
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 /* ===========================================
@@ -514,63 +532,90 @@ code {
 /* ===========================================
    ESTILOS PARA INPUTS EN FORMULARIOS
    ===========================================
-   input ancho completo, padding, borde, radio, margen.
+   input ancho completo, padding generoso, borde sutil, radio, margen.
+   transition para animaciones suaves.
+   focus cambia el borde a primario.
 */
-.demo-form input {
+.demo-form input, .demo-form select {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid var(--border);
+    padding: 0.875rem;
+    border: 2px solid var(--border);
     border-radius: var(--radius);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.demo-form input:focus, .demo-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /* ===========================================
    ESTILOS PARA BOTONES EN FORMULARIOS
    ===========================================
-   button con fondo primario, texto blanco, sin borde, padding, radio, cursor, transición.
+   Botones futuristas con gradiente neón.
+   Color blanco, sin borde, padding generoso, border-radius.
+   Cursor pointer, transition, font-weight.
+   Box-shadow con glow.
 */
 .demo-form button {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.875rem 2rem;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: var(--glow);
+    border: 1px solid var(--primary-color);
 }
 
 /* ===========================================
    HOVER PARA BOTONES EN FORMULARIOS
    ===========================================
-   Cambia a color secundario.
+   Hover con transformación y glow intenso.
 */
 .demo-form button:hover {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
 }
 
 /* ===========================================
    ESTILOS GENERALES PARA BOTONES
    ===========================================
-   button general con estilos similares.
+   Botones futuristas con gradiente neón.
+   Color blanco, sin borde, padding, border-radius, cursor, transition.
+   Font-weight, box-shadow con glow.
 */
 button {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     cursor: pointer;
     margin: 0.5rem 0;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: var(--glow);
+    border: 1px solid var(--primary-color);
 }
 
 /* ===========================================
    HOVER PARA BOTONES GENERALES
    ===========================================
-   Similar.
+   Hover con transformación y glow intenso.
 */
 button:hover {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
 }
 
 /* ===========================================
@@ -598,29 +643,47 @@ img, video {
 /* ===========================================
    ESTILOS PARA ARTÍCULOS
    ===========================================
-   .articulo para article.
-   margen inferior, padding, fondo semi-transparente, radio, sombra.
+   Artículos futuristas con fondo oscuro translúcido.
+   Padding amplio, border-radius grande, box-shadow con glow.
+   Border sutil con color neón.
 */
 .articulo {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--card-bg);
     border-radius: var(--radius);
-    box-shadow: 0 2px 4px var(--border);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* ===========================================
+   EFECTO HOVER PARA ARTÍCULOS
+   ===========================================
+   Hover con glow intenso y elevación.
+*/
+.articulo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2), 0 10px 25px -3px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
 }
 
 /* ===========================================
    ESTILOS PARA EL FOOTER
    ===========================================
-   .site-footer para footer.
-   fondo oscuro, texto blanco, centrado, padding, margen superior.
+   Footer futurista con gradiente oscuro.
+   Color blanco, centrado, padding generoso, margen superior.
+   Box-shadow con glow.
 */
 .site-footer {
-    background: var(--text-color);
+    background: linear-gradient(135deg, var(--surface-color) 0%, #0f0f0f 100%);
     color: white;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 3rem;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 212, 255, 0.1);
+    border-top: 1px solid var(--border);
 }
 
 /* ===========================================
@@ -636,12 +699,12 @@ img, video {
    DISEÑO RESPONSIVO
    ===========================================
    @media (max-width: 768px) aplica estilos solo en pantallas pequeñas.
-   Cambia navegación a columna, reduce tamaños de fuente, ajusta contenedor.
+   Cambia navegación a columna, reduce tamaños de fuente, ajusta contenedor y padding.
 */
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .site-title {
@@ -654,6 +717,27 @@ img, video {
 
     .container {
         width: 95%;
+    }
+
+    .site-header {
+        padding: 2rem 0;
+    }
+
+    .site-nav {
+        padding: 1rem 0;
+    }
+
+    .articulo {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .demo-form {
+        padding: 1.5rem;
+    }
+
+    .nav-list li a {
+        padding: 0.625rem 1rem;
     }
 }
 
