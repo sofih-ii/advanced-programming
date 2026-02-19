@@ -1,17 +1,17 @@
-# 📚 Apuntes de Clase: HTML y CSS
+# Apuntes de Clase: HTML y CSS
 ### Fundamentos del Desarrollo Web — Programación Avanzada
 
 Página web educativa con apuntes organizados sobre HTML5 y CSS3,
 con un tema visual **cyberpunk/futurista** de colores neón.
 
-## 🌐 Vista previa
+## Vista previa
 
 Tema oscuro con paleta neón:
-- 🔵 Cian `#00d4ff` — color principal
-- 🟢 Verde `#00ff88` — acentos
-- 🔴 Rosa `#ff0080` — highlights
+- Cian `#00d4ff` — color principal
+- Verde `#00ff88` — acentos
+- Rosa `#ff0080` — highlights
 
-## 📖 Contenido
+## Contenido
 
 - Conceptos básicos de HTML y CSS
 - Etiquetas HTML más importantes con ejemplos
@@ -20,13 +20,13 @@ Tema oscuro con paleta neón:
 - Elementos avanzados: listas, multimedia, tablas y formularios
 - Botones e interactividad
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - HTML5 semántico
 - CSS3 (variables, flexbox, gradientes, animaciones, media queries)
 - JavaScript básico (eventos onclick)
 
-## 📁 Estructura
+## Estructura
 ```
 advanced_programming/
 ├── index.html   # Estructura y contenido
@@ -34,7 +34,7 @@ advanced_programming/
 └── README.md
 ```
 
-## 🚀 Cómo usar
+## Cómo usar
 ```bash
 git clone https://github.com/sofih-ii/advanced-programming.git
 cd advanced_programming
@@ -42,7 +42,7 @@ cd advanced_programming
 
 Abre `index.html` en tu navegador. No requiere instalación. Utiliza Go live si estas desde Visual Studio Code, lo instala la extensión.
 
-## ✨ Características del CSS
+## Características del CSS
 
 - Variables CSS para tema consistente
 - Diseño responsivo (mobile, tablet, desktop)
@@ -50,6 +50,6 @@ Abre `index.html` en tu navegador. No requiere instalación. Utiliza Go live si 
 - Cards con `backdrop-filter: blur`
 - Fuente monoespaciada estilo IDE
 
-## 👤 Autor
+## Autor
 
 Sofia Trujillo · © 2025
